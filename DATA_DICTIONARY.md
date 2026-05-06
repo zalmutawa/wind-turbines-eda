@@ -17,15 +17,15 @@
 | `t_county` | str | County name |
 | `t_fips` | str | FIPS county code |
 | `p_name` | str | Wind plant/project name |
-| **`p_year`** ⭐ | int | **Year the project became operational — primary time axis** |
+| **`p_year`** ⭐ | int | **Year the project became operational - primary time axis** |
 | `p_tnum` | int | Number of turbines in the project |
 | `p_cap` | float | Total project capacity (MW) |
-| **`t_manu`** ⭐ | str | **Turbine manufacturer — used for manufacturer evolution analysis** |
+| **`t_manu`** ⭐ | str | **Turbine manufacturer - used for manufacturer evolution analysis** |
 | `t_model` | str | Turbine model |
-| **`t_cap`** ⭐ | float | **Individual turbine capacity (kW) — primary outcome variable** |
-| **`t_hh`** ⭐ | float | **Hub height (meters) — physical dimension #1** |
-| **`t_rd`** ⭐ | float | **Rotor diameter (meters) — physical dimension #2** |
-| **`t_rsa`** ⭐ | float | **Rotor swept area (m²) — physical dimension #3, correlated with capacity at r=0.88** |
+| **`t_cap`** ⭐ | float | **Individual turbine capacity (kW) - primary outcome variable** |
+| **`t_hh`** ⭐ | float | **Hub height (meters) - physical dimension #1** |
+| **`t_rd`** ⭐ | float | **Rotor diameter (meters) - physical dimension #2** |
+| **`t_rsa`** ⭐ | float | **Rotor swept area (m²) - physical dimension #3, correlated with capacity at r=0.88** |
 | `t_ttlh` | float | Total height to blade tip (meters) |
 | `retrofit` | int | Retrofit flag — 1 = retrofitted, 0 = not (not a focus of this analysis) |
 | `retrofit_year` | float | Year of retrofit, where applicable |
@@ -52,8 +52,8 @@ Used to contextualize whether states with higher-spec (newer, larger) turbine fl
 | `Plant State` | str | State where plant is located |
 | `NERC Region` | str | Grid reliability region |
 | `Sector Name` | str | Utility sector classification |
-| `Netgen [Month]` | float | Net monthly generation (MWh) — 12 columns (Jan–Dec) |
-| **`Net Generation (Megawatthours)`** ⭐ | float | **Total annual net generation — used to validate capacity vs. output relationship** |
+| `Netgen [Month]` | float | Net monthly generation (MWh) - 12 columns (Jan–Dec) |
+| **`Net Generation (Megawatthours)`** ⭐ | float | **Total annual net generation - used to validate capacity vs. output relationship** |
 | `YEAR` | int | Reporting year (2015–2024) |
 
 ---
@@ -61,7 +61,7 @@ Used to contextualize whether states with higher-spec (newer, larger) turbine fl
 ## `average_electricity_rates.csv`
 **Rows:** 50 (states) | Average electricity rates in cents per kWh
 
-Used to assess whether states with older, lower-capacity fleets face higher electricity costs — and whether modernizing those fleets has economic implications for consumers.
+Used to assess whether states with older, lower-capacity fleets face higher electricity costs and whether modernizing those fleets has economic implications for consumers.
 
 | Column | Type | Description |
 |---|---|---|
@@ -95,7 +95,7 @@ Used as a control variable — states with stronger wind resources may naturally
 |---|---|---|
 | `state` | str | U.S. state name |
 | `WindiestStatesAverageWindSpeedMPH` | float | Average wind speed (MPH) |
-| `MeanWindSpeed328ft` | float | Mean wind speed at 100m elevation (mph) — closest to modern hub heights |
+| `MeanWindSpeed328ft` | float | Mean wind speed at 100m elevation (mph) closest to modern hub heights |
 | `MeanWindPower328ft` | float | Mean wind power density at 100m (W/m²) |
 | `MeanWindSpeed33ft` | float | Mean wind speed at 10m elevation (mph) |
 
@@ -108,10 +108,10 @@ Used as a control variable — states with stronger wind resources may naturally
 | Column | Dataset | Role |
 |---|---|---|
 | `p_year` ⭐ | wind-turbines | Primary time axis — used to bin turbines by decade |
-| `t_cap` ⭐ | wind-turbines | Primary outcome variable — capacity (kW) tracked across decades |
-| `t_hh` ⭐ | wind-turbines | Physical dimension — hub height growth over time |
-| `t_rd` ⭐ | wind-turbines | Physical dimension — rotor diameter growth over time |
-| `t_rsa` ⭐ | wind-turbines | Physical dimension — rotor swept area (r=0.88 with capacity) |
+| `t_cap` ⭐ | wind-turbines | Primary outcome variable ,capacity (kW) tracked across decades |
+| `t_hh` ⭐ | wind-turbines | Physical dimension, hub height growth over time |
+| `t_rd` ⭐ | wind-turbines | Physical dimension, rotor diameter growth over time |
+| `t_rsa` ⭐ | wind-turbines | Physical dimension, rotor swept area (r=0.88 with capacity) |
 | `t_manu` ⭐ | wind-turbines | Manufacturer — breakdown of who drove vs. lagged innovation |
 | `t_state` | wind-turbines | Geographic grouping — fleet-age and capacity gap by state |
 | `Net Generation (Megawatthours)` | wind-operators | Validates whether higher-spec fleets produce more output |
